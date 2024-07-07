@@ -1,0 +1,212 @@
+:root{
+    --global-padding-section: 10px;
+    --color-red: #fa0303;
+}
+
+*{
+    margin: 0;
+}
+
+nav {
+    width: 100%;
+    background-color: #fefefe;
+    color: #fff;
+    background-color: black;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    /*position: fixed;  <-- commenta il position sopra e togli questo per vedere il fixed della navbar*/
+  }
+.navbar_logo {
+    background-color: black;
+    width: 40px;
+  }
+
+  .nav__menu-item {
+    display: inline-block;
+    margin-right: 20px;
+  }
+
+  .nav__menu-item a{
+    color: rgb(90, 89, 89);
+    text-decoration: none;
+    
+  }
+  .nav__menu-item a:hover{
+    color: black;
+  }
+
+.p_m_b{
+    margin: 10px;
+    padding: var(--global-padding-section) ;
+    border:10px;
+    border-style: solid;
+    border-color: black;
+    
+}
+
+ul  li{
+    list-style: none;
+    display: inline-block;
+}
+
+.p-special{
+    margin: 40px 10px;
+}
+.p-special .b-blue{
+    margin: auto;
+    height: 50px;
+    width: 50px;
+    border: 2px;
+    border-style: solid;
+    border-color: blue;
+    background-color: blanchedalmond;
+}
+
+.p-special .inline{
+    display: inline;
+}
+
+.p-special .inline-b{
+    display: inline-block;
+}
+
+.p-special .block{
+    display: block;
+}
+
+.hide{
+    display: none;
+}
+
+.f-flex p{
+    float: left;
+}
+.f-flex img{
+    float: right;
+    
+}
+.f-flex .p-sotto{
+    clear: both;
+    width: 100%;
+}
+
+
+.colonna {
+    width: 200px; 
+    border: 2px;
+    border-style: solid;
+    margin:40px 10px;
+    float: left; 
+  }
+
+.p-col img{
+    width: 100%;
+}
+
+.quadrato {
+    position: fixed;
+    bottom: 0; 
+    right: 0; 
+    width: 50px; 
+    height: 50px; 
+    background-color:var(--color-red); 
+}
+
+
+.quadrato-p {
+    margin: 10px;
+    width: 50px; 
+    height: 50px; 
+    background-color: var(--color-red); 
+}
+
+
+.quadrato-perc {
+    margin: 10px;
+    width: 50%; 
+    height: 50%;
+    background-color: var(--color-red); 
+}
+
+.d-flex{
+    display: flex;
+}
+
+.card {
+    margin: 20px 10px;
+    width: 350px;
+    height: 250px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 15px;
+    position: relative;
+  }
+  
+  .card-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .card-content {
+    padding: 10px;
+  }
+  
+  .close-button {
+    width: 20px;
+    top: 20px;
+    right: 10px;
+    position: absolute;
+    cursor: pointer;
+    background-color: var(--color-red);
+    color: white;
+  }
+
+  .font-rem{
+    font-size: 7rem;
+  }
+  .font-em{
+    font-size: 7em;
+  }
+
+#footer__content{
+    width: 100%;
+    background-color: #bfbfbf;
+    margin: auto;
+    }
+    .footer__row{
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .footer_logo{
+    width: 40px;
+    padding:60px 0px 0px 20px ;
+    }
+    .footer__col h5{
+      font-size: medium;
+      padding:0px 20px ;
+    }
+    .footer__col{
+      width: 18%;
+      padding: 0 15px;
+    }
+    .footer__col h6{
+      font-size: medium;
+      padding-left: 40px;
+    }
+    .footer__menu-item{
+        display: flex;
+        padding: var(--global-padding-section);
+    }
+    .footer__menu-item  a{
+      color: rgb(90, 89, 89);
+      text-decoration: none;
+    }
+  
+    .footer__menu-item a:hover{
+      color: rgb(41, 1, 244);
+    }
