@@ -7,6 +7,20 @@
     margin: 0;
 }
 
+
+
+
+.padre{
+  
+  width:200px;
+  height:200px;
+}
+
+.figlio{
+  background-color:red;
+  width:50%;
+  height:50%;
+}
 nav {
     width: 100%;
     background-color: #fefefe;
