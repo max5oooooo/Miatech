@@ -1,0 +1,113 @@
+/* crea una media query che quando lo schermo è in dimensione non superiore a 768 px lo sfondo del body deve essere blu */
+body {
+    background-color: #fff; /* Colore di sfondo predefinito */
+  }
+  
+  @media (max-width: 768px) {
+    body {
+      background-color: blue; /* Sfondo blu per schermi <= 768px */
+    }
+  }
+
+/* crea un div che contiene 3 div il padre deve essere un flex box */
+.flex-container{
+    display: flex; 
+    flex-direction: row;
+    /*flex-wrap:wrap; per wrapparli */
+    justify-content: space-between;
+}
+
+
+/* Numera i 3 div figli e cambia direzione da riga a colonna*/
+
+.flex-container-col{
+    display: flex; 
+    flex-direction:column;
+    /*flex-direction: column-reverse; per invertire l'ordine con reverse*/
+    margin: 10px ;
+}
+
+/*centrare gli elementi nel main axis e nel cross axis*/
+.center{
+    justify-content: center;
+    align-items: center;
+}
+
+/*rendi il terso flex-item più grande dei primi 2 e il primo più piccolo degli altri due e modifica il flex basis del secondo flex item*/
+
+.flex-item{
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    text-align: center;
+    line-height: 100px;
+}
+
+.flex-container .flex-item:nth-child(3){
+    flex-grow: 2;
+}
+
+.flex-container .flex-item:nth-child(1){
+    flex-shrink: 2;
+}
+
+.flex-container .flex-item:nth-child(2) {
+    flex-basis: 400px; 
+}
+/*modifica l'align self di 2 dei 3 items*/
+.flex-container .flex-item:nth-child(2) {
+    align-self: center; 
+}
+      
+.flex-container .flex-item:nth-child(3) {
+    align-self: flex-end; 
+}
+
+/*Crea un div con al suo interno 9 div ognuno contenente un numero, il container deve essere un grid container e unisci le celle 8 e 9 , 1 e 4*/
+
+.grid-container {
+    display: grid;
+    grid-template-areas: /* Definisce le aree della griglia */
+    "area1 area2"
+    "area3 area4";
+    grid-template-columns: auto auto auto;
+    gap: 10px; 
+    width: fit-content; 
+    margin: 20px auto; 
+    border: 1px solid black; 
+  }
+
+.grid-item {
+    background-color: #ccc;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+  }
+.grid-item:nth-child(1),
+.grid-item:nth-child(4) {
+  grid-area: area1; 
+}
+
+.grid-item:nth-child(8),
+.grid-item:nth-child(9) {
+  grid-area: area4; 
+}
+/*Utilizza la proprietà grid-template per definire una griglia di 2 righe e 5 colonne e centra gli elementi*/
+.grid-container-r {
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(5, 1fr); 
+    gap: 10px; 
+    width: fit-content; 
+    margin: 20px auto; 
+    border: 1px solid black; 
+    /* align-items: center;  Centra verticalmente gli elementi */
+    /* justify-items: center; Centra orizzontalmente gli elementi */
+  }
+  
+  .grid-item-c {
+    background-color: #ccc;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+  }
+

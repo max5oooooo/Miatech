@@ -1,0 +1,33 @@
+.calc {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: fit-content;
+    margin: 20px auto;
+    border: 1px solid black;
+  }
+
+  
+  .button {
+    background-color: #ddd;
+    border: 1px solid #ccc;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  
+  .op {
+    background-color: #f0f0f0;
+  }
+  
+
+  .equal {
+    grid-area: span 2 row4;
+    background-color: #0099cc;
+  }
+  
+  .c {
+    grid-area: 3 / 4;
+    background-color: #ff4d4d;
+  }

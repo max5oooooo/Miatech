@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- crea un div che contiene altri 3 div , il div padre deve essere un flexbox-->
+     <div class="flex-container">
+        <div>
+            Div1
+        </div>
+        <div>
+            Div2
+        </div>
+        <div>
+            Div3
+        </div>
+     </div>
+
+<!--Numera i 3 div figli e cambia direzione da riga a colonna-->
+<div class="flex-container-col">
+    <div>
+        Div1
+    </div>
+    <div>
+        Div2
+    </div>
+    <div>
+        Div3
+    </div>
+ </div>
+
+ <!--centrare gli elementi nel main axis e nel cross axis-->
+ <div class="flex-container center">
+    <div>
+        Div1
+    </div>
+    <div>
+        Div2
+    </div>
+    <div>
+        Div3
+    </div>
+ </div>
+<!--rendi il terso flex-item più grande dei primi 2 e il primo più piccolo degli altri due modifica il flex basis del 2  flex item -->
+<div class="flex-container ">
+    <div class="flex-item">
+        Div1
+    </div>
+    <div class="flex-item">
+        Div2
+    </div>
+    <div class="flex-item">
+        Div3
+    </div>
+ </div>
+
+<!--Crea un div con al suo interno 9 div ognuno contenente un numero, il container deve essere un grid container-->
+<section class="grid-container">
+    <div class="grid-item">
+        1
+    </div>
+    <div class="grid-item">
+        2
+    </div>
+    <div class="grid-item">
+        3
+    </div>
+    <div class="grid-item">
+        4
+    </div>
+    <div class="grid-item">
+        5
+    </div>
+    <div class="grid-item">
+        6
+    </div>
+    <div class="grid-item">
+        7
+    </div>
+    <div class="grid-item">
+        8
+    </div>
+    <div class="grid-item">
+        9
+    </div>
+</section>
+<!--Utilizza la proprietà grid-template per definire una griglia di 2 righe e 5 colonne-->
+<section class="grid-container-r">
+    <div class="grid-item-c">
+        1
+    </div>
+    <div class="grid-item-c">
+        2
+    </div>
+    <div class="grid-item-c">
+        3
+    </div>
+    <div class="grid-item-c">
+        4
+    </div>
+    <div class="grid-item-c">
+        5
+    </div>
+    <div class="grid-item-c">
+        1
+    </div>
+    <div class="grid-item-c">
+        2
+    </div>
+    <div class="grid-item-c">
+        3
+    </div>
+    <div class="grid-item-c">
+        4
+    </div>
+    <div class="grid-item-c">
+        5
+    </div>
+</section>
+</body>
+</html>
