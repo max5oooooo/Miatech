@@ -3,11 +3,6 @@ body {
     background-color: #fff; /* Colore di sfondo predefinito */
   }
   
-  @media (max-width: 768px) {
-    body {
-      background-color: blue; /* Sfondo blu per schermi <= 768px */
-    }
-  }
 
 /* crea un div che contiene 3 div il padre deve essere un flex box */
 .flex-container{
@@ -111,5 +106,7 @@ body {
     padding: 10px;
     font-size: 20px;
   }
+
+
 
 
