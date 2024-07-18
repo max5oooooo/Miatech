@@ -96,6 +96,7 @@ body {
 .grid-container-r {
     display: grid;
     grid-template: repeat(2, 1fr) / repeat(5, 1fr); 
+    grid-template-rows: 100px 200px;
     gap: 10px; 
     width: fit-content; 
     margin: 20px auto; 
@@ -110,4 +111,5 @@ body {
     padding: 10px;
     font-size: 20px;
   }
+
 
