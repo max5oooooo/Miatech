@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+.flex {
+  display: flex;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(213, 211, 211);
+}
+
+nav {
+  background-color: #333;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+nav .container {
+  width: 100%;
+  max-width: 1200px;
+}
+nav .container .nav__menu-item {
+  margin: 15px 15px;
+}
+nav .container .nav__menu-item a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  padding: 8px 12px;
+}
+nav .container .nav__menu-item a:hover {
+  color: #ff0000;
+}
+
+/*# sourceMappingURL=style.css.map */
