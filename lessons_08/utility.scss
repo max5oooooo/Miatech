@@ -1,14 +1,12 @@
-.flex{
+@mixin d-flex{
     display: flex;
 }
-.flex-grow{
-    flex-grow: 1;
-}
-
-.items-center{
+@mixin i-center{
     align-items: center;
 }
-
-.justify-center{
+@mixin j-center{
     justify-content: center;
+}
+@mixin f-grow{
+    flex-grow: 1;
 }
