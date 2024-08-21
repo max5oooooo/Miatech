@@ -1,5 +1,24 @@
 @use "utility.scss";
+@use 'sass:list';
 @import "root.scss";
+
+$background-color: #e7e7e7;
+$border-color: #1f1fd0;
+$div-padding: 20px;
+
+$colors: #ff00ff, #00ff00, #0000ff, #ff0000;
+
+@each $color in $colors {
+
+    $index:list.index($colors, $color);
+    .color-#{$index} {
+      color: $color;
+    }
+  }
+
+
+  
+ 
 
 * {
     margin: 0;
@@ -10,6 +29,8 @@
 body {
     background-color: $g-bg;
 }
+
+
 
 nav {
     background-color: $bg-nav;
@@ -30,6 +51,7 @@ nav {
 
             .nav__menu-item {
                 margin: 15px 15px;
+                background-color: $background-color;
                 a {
                     text-decoration: none;
                     color: #fff;
@@ -41,6 +63,13 @@ nav {
                     }
                 }
             }
+            .nav__menu-item:last-child {
+                @extend .nav__menu-item;
+                border: solid ;
+                border-color: $border-color;
+                background-color: #e7e7e7;
+              }
         }
     }
 }
+
