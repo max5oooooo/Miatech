@@ -186,3 +186,74 @@ for (let i = 0; i < meta; i++) {
 
 console.log(array);*/
 
+/* Crea un array vuoto chiamalo "parole" e, tramite un ciclo for, popolalo
+ di 5 parole (usa il prompt per inserire le parole). Quando è finito il ciclo esegui un nuovo ciclo che scorre l'array popolato
+  e stampa a video solo le parole che 
+hanno un numero dispari di lettere (tip: usa sempre il metodo length per contare le lettere di una parola)
+
+const parole = [];
+
+for (let i = 0; i < 5; i++) {
+    const parola = prompt("Inserisci una parola:");
+    parole.push(parola); 
+}
+
+for (let i = 0; i < parole.length; i++) {
+    if (parole[i].length % 2 !== 0) {
+        console.log(parole[i]);
+    }
+}*/
+
+
+/*  Crea un oggetto chiamalo "person" ed assegnali le proprietà: name, age, city. Valorizza le proprietà e stampa l'oggetto in console */
+
+const person = [
+    {
+        name: "Alessandro",
+        age: 33,
+        city: "Sicilia"
+    },
+    {
+        name: "Ana",
+        age: 30,
+        city: "Sardegna"
+    },
+    {
+        name: "Mattia",
+        age: 31,
+        city: "Calabria"
+    },
+    {
+        name: "Marco",
+        age: 25,
+        city: "Veneto"
+    }
+];
+
+console.log(person);
+
+
+/* Riprendi l'oggetto precedente e stampa in console solo la proprietà age 
+
+for (let i = 0; i < person.length; i++) {
+    console.log(person[i].age); 
+}*/
+
+
+/* Modifica la proprietà age (senza modificare l'assegnazione iniziale) e ristampala in console
+
+person[0].age = 31;
+person[1].age = 40;
+person[2].age = 51;
+person[3].age = 71;
+
+console.log(person);*/
+
+/*Aggiungi la proprietà job (e valorizzala) all'oggetto senza modificaare l'assegnazione iniziale. Stampa quindi poi in console la nuova proprietà
+
+person[0].job = "programmatore";
+person[1].job = "scienziato";
+person[2].job = "streamer";
+person[3].job = "calciatore";
+
+console.log(person);*/
