@@ -59,7 +59,7 @@ console.log(inside);*/
 /* scrivi un ciclo for che generi solo numeri pari
 let a = 20;
 
-for(i = 0; i <= a; i += 2){
+for(let i = 0; i <= a; i += 2){
     console.log(i)
 };*/
 
@@ -163,7 +163,7 @@ let array = [1, 2, 3, 6, 10, 21];
 
 let somma = 0;
 
-for(i = 0; i < array.length; i++){
+for(let i = 0; i < array.length; i++){
     somma += array[i];
 }
 
