@@ -205,7 +205,7 @@ for (let i = 0; i < parole.length; i++) {
 }*/
 
 
-/*  Crea un oggetto chiamalo "person" ed assegnali le proprietà: name, age, city. Valorizza le proprietà e stampa l'oggetto in console */
+/*  Crea un oggetto chiamalo "person" ed assegnali le proprietà: name, age, city. Valorizza le proprietà e stampa l'oggetto in console 
 
 const person = [
     {
@@ -230,7 +230,7 @@ const person = [
     }
 ];
 
-console.log(person);
+console.log(person);*/
 
 
 /* Riprendi l'oggetto precedente e stampa in console solo la proprietà age 
@@ -257,3 +257,163 @@ person[2].job = "streamer";
 person[3].job = "calciatore";
 
 console.log(person);*/
+
+/*Utilizza il "for in" per iterare le proprietà dell'oggetto e stampare all'interno del ciclo sia il nome della proprietà che il suo valore in console
+
+for (let proprietà in person) {
+    console.log("Proprietà:", proprietà, "Valore:", person[proprietà]);
+  }*/
+
+
+/* Crea una funzione chiamata outerFunction che accetta un parametro x.
+All'interno di outerFunction, crea una funzione chiamata innerFunction che accetta un parametro y.
+innerFunction deve restituire la somma di x e y.
+outerFunction deve restituire innerFunction.
+
+
+function outerFunction(x) {
+    function innerFunction(y) {
+      return x + y;
+    }
+    return innerFunction;
+  }
+
+const firstFunction = outerFunction(4);
+
+const result = firstFunction(5);
+
+console.log(result);*/
+
+/*Utilizza il codice dell'esercizio precedente (Funzioni annidate).
+Modifica outerFunction in modo che accetti un secondo parametro initialValue e memorizzi il valore iniziale in una variabile chiamata result.
+innerFunction dovrebbe aggiungere y a result anziché restituire semplicemente la somma di x e y.
+innerFunction dovrebbe restituire result.
+outerFunction dovrebbe restituire innerFunction.
+
+
+function outerFunction(x, initialValue) {
+    let result = initialValue;
+  
+    function innerFunction(y) {
+      result += y;
+      return result;
+    }
+  
+    return innerFunction;
+  }
+
+  const firstFunction = outerFunction(4, 10);
+
+  console.log(firstFunction(3));
+  console.log(firstFunction(5));*/
+
+  /*Crea una funzione chiamata createCounter che restituisce un oggetto con due metodi: increment e decrement.
+Utilizza una variabile locale chiamata count per tenere traccia del conteggio.
+Il metodo increment dovrebbe aumentare count di 1 e restituire il nuovo valore.
+Il metodo decrement dovrebbe diminuire count di 1 e restituire il nuovo valore.
+
+function createCounter() {
+    let count = 0;
+  
+    return {
+      increment: () => {
+        count++;
+        return count;
+      },
+      decrement: () => {
+        count--;
+        return count;
+      }
+    };
+  }
+
+const counter = createCounter();
+
+console.log(counter.increment());
+console.log(counter.increment());
+console.log(counter.increment());
+console.log(counter.decrement());*/
+
+/* Crea un oggetto chiamato student con le seguenti proprietà: name, age, grade, school.
+Usa Object.keys() per ottenere tutte le chiavi dell'oggetto student.
+Stampa l'array delle chiavi ottenute sulla console. (qui sotto anche l'esercizio con values e con entries.
+
+const student = {
+    name: "Francesco Oranzini",
+    age: 28,
+    grade: "infinito",
+    work: "Tutor mia"
+};
+
+const keys = Object.keys(student);
+
+const values = Object.values(student);
+
+const entries = Object.entries(student);
+
+
+
+console.log(keys);
+console.log(values);
+console.log(entries);*/
+
+/*Crea un array chiamato numbers contenente i numeri da 1 a 5.
+Usa forEach per stampare ogni numero moltiplicato per 2.
+Usa map per creare un nuovo array squaredNumbers contenente i quadrati di ogni numero in numbers.
+Stampa il nuovo array squaredNumbers sulla console.
+
+const numbers = [1, 2, 3, 4, 5];
+
+numbers.forEach(number => {
+  console.log(number * 2);
+});
+
+const moltipliedNumbers = numbers.map(number => number * number);
+
+console.log(moltipliedNumbers);*/
+
+
+/*Crea un array chiamato students contenente oggetti con le seguenti proprietà: name e grade.
+Usa filter per creare un nuovo array passedStudents contenente solo gli studenti con una grade maggiore o uguale a 60.
+Usa find per trovare il primo studente con una grade minore di 60.
+Stampa il nuovo array passedStudents e lo studente trovato con find sulla console.
+
+const students = [
+    { name: "Marco Ragno", grade: 75 },
+    { name: "Mattia Pastafiglia", grade: 58 },
+    { name: "Ana Munteanu", grade: 82 },
+    { name: "Alessandro Turacci", grade: 60 }
+];
+
+const promotedStudents = students.filter(student => student.grade >= 60);
+
+
+const failedStudent = students.find(student => student.grade < 60);
+
+
+console.log("Studenti promossi:");
+console.log(promotedStudents);
+
+console.log("Primo studente bocciato:");
+console.log(failedStudent);*/
+
+
+/* Crea un array chiamato expenses contenente numeri che rappresentano varie spese.
+Usa reduce per calcolare la somma totale di tutte le spese.
+Crea un array chiamato words contenente le seguenti parole: "banana", "apple", "cherry", "date".
+Usa sort per ordinare l'array words in ordine alfabetico.
+Stampa la somma totale delle spese e l'array words ordinato sulla console. 
+
+
+const expenses = [100, 50, 25, 75];
+
+const totalCost = expenses.reduce((total, expense) => total + expense, 0);
+
+
+const words = ["banana", "apple", "cherry", "date"];
+
+
+const sortedWords = words.sort();
+
+console.log("Spese totali:", totalCost);
+console.log("Parole ordinate:", sortedWords);*/
