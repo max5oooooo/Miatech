@@ -355,7 +355,11 @@ const entries = Object.entries(student);
 
 console.log(keys);
 console.log(values);
-console.log(entries);*/
+console.log(entries);
+
+for (const [key, value] of entries) {
+  console.log(`${key}: ${value}`);
+}*/
 
 /*Crea un array chiamato numbers contenente i numeri da 1 a 5.
 Usa forEach per stampare ogni numero moltiplicato per 2.
