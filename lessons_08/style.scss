@@ -4,7 +4,7 @@
 
 $background-color: #e7e7e7;
 $border-color: #1f1fd0;
-$div-padding: 20px;
+$container-width: 90%;
 
 $colors: #ff00ff, #00ff00, #0000ff, #ff0000;
 
@@ -73,3 +73,20 @@ nav {
     }
 }
 
+.container-wrapper {
+    width: $container-width;
+    margin: 0 auto; 
+    display: flex; 
+    margin-top: 20px;
+    .container {
+      padding: 20px;
+      box-sizing: border-box; 
+      &:first-child { 
+        width: 33.33%; 
+      }
+  
+      &:last-child { 
+        width: 66.66%; 
+      }
+    }
+  }
