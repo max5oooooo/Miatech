@@ -22,6 +22,7 @@
 }
 
 body {
+  font-size: 14/\$contextem;
   background-color: rgb(213, 211, 211);
 }
 
@@ -54,6 +55,7 @@ nav .container .nav__menu .nav__menu-item a, nav .container .nav__menu .nav__men
 }
 nav .container .nav__menu .nav__menu-item a:hover {
   color: #ff0000;
+  color: #666;
 }
 nav .container .nav__menu .nav__menu-item:last-child {
   border: solid;
