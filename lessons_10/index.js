@@ -331,16 +331,20 @@ setTimeout(() => {
 }, 5000);*/
   
 /*Creare uno script che utilizzi un blocco try per eseguire una divisione e un blocco catch per gestire un errore
- se il divisore è zero. Stampare un messaggio di errore nella console se viene sollevata un'eccezione.*/
+ se il divisore è zero. Stampare un messaggio di errore nella console se viene sollevata un'eccezione.
 
  function divisione(dividendo, divisore) {
   try {
-    const risultato = dividendo / divisore;
-    console.log(`Il risultato della divisione è: ${risultato}`);
+    if(divisore == 0){
+      throw new Error("il risultato non è divisibile");
+    }else{
+      const risultato = dividendo / divisore;
+      console.log(`Il risultato della divisione è: ${risultato}`);
+    }
   } catch (error) {
     console.error("Errore: Impossibile dividere per zero!");
   }
 };
 
 divisione(45, 5);
-divisione(15, 0);
+divisione(15, 0);*/
