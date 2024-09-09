@@ -159,3 +159,188 @@ console.log(resto);*/
   console.log(nome); 
   console.log(cognome);
   console.log(resto);*/
+
+/* Dichiarare un oggetto JavaScript e utilizzare il metodo JSON.stringify per convertirlo in una stringa JSON. Stampare la stringa JSON nella console.
+
+const persona = {
+  nome: "Francesco",
+  cognome: "Oranzini",
+  età: 30,
+  città: "Firenze"
+};
+
+const personaJSON = JSON.stringify(persona);
+
+console.log(personaJSON);*/
+
+/*Dichiarare una stringa JSON e utilizzare il metodo JSON.parse per convertirla in un oggetto JavaScript. Stampare l'oggetto JavaScript nella console.
+
+const stringaJSON = `{"nome": "Francesco","cognome": "Oranzini","età": 30,"città": "Firenze"}`;
+
+const oggettoPersona = JSON.parse(stringaJSON);
+console.log(oggettoPersona);*/
+
+/*Dichiarare un array di oggetti rappresentante una lista di persone in formato JSON. Convertire questa stringa 
+JSON in un array di oggetti JavaScript, aggiungere una nuova persona all'array,
+ e poi riconvertire l'array aggiornato in una stringa JSON. Stampare la stringa JSON aggiornata nella console.
+
+const personeJSON = `[{"nome": "Francesco","cognome": "Oranzini","età": 30,"città": "Firenze"},
+{"nome": "Mattia","cognome": "Pastafiglia","età": 31,"città": "Catanzaro"},
+{"nome": "Alessandro","cognome": "D'antoni","età": 30,"città": "Palermo"}]`;
+
+const persone = JSON.parse(personeJSON);
+console.log(persone);
+
+persone.push({nome:"anamaria", cognome:"Munteanu", età:28, città:"Pula"});
+
+console.log(persone);
+
+const stringaJSON = JSON.stringify(persone);
+
+console.log(stringaJSON);*/
+
+/*Creare una stringa che contenga il nome e il cognome di una persona utilizzando i template literals. Dichiarare due variabili nome e cognome 
+e creare una stringa che li combini. Stampare la stringa risultante nella console.
+
+const nome = "Francesco";
+const cognome = "Oranzini";
+
+const stringa = `il nome completo è : ${nome} ${cognome}`;
+
+console.log(stringa);*/
+
+/* Creare una stringa multilinea che contenga informazioni su una persona utilizzando i template literals. Dichiarare variabili per il nome, cognome, età e città, 
+e creare una stringa multilinea che le combini. Stampare la stringa risultante nella console.
+
+const nome = "Francesco";
+const cognome = "Oranzini";
+const eta = 30;
+const citta = "Firenze";
+
+const persona = `Nome: ${nome}, Cognome: ${cognome}, Età: ${eta} anni, Città: ${citta}
+`;
+
+console.log(persona);*/
+
+/*Scrivere una funzione che accetti un oggetto rappresentante una persona e restituisca una stringa 
+formattata utilizzando i template literals. 
+Chiamare la funzione con un oggetto di esempio e stampare la stringa risultante nella console.
+
+function formattaStringa(persona){
+  const{nome, cognome, età, città} = persona;
+  return`nome:${nome}, cognome:${cognome}, età:${età}, città:${città}`;
+}
+
+const persona = {
+  nome: "Francesco",
+  cognome: "Oranzini",
+  età: 30,
+  città: "Firenze"
+};
+
+console.log(formattaStringa(persona));*/
+
+/*Creare un semplice script che stampi diversi tipi di dati nella console utilizzando console.log. 
+Dichiarare variabili di diversi tipi (numero, stringa, array, oggetto) e stamparle.
+
+let numero = 30;
+let stringa = "Ciao Francesco";
+let array = [20, "prova", 80, "ciao"];
+let oggetto = { nome: "Francesco", città: "Firenze" };
+
+console.log(numero);
+console.log(stringa);
+console.log(array);
+console.log(oggetto);*/
+
+/*Creare uno script che simuli un controllo di errori. Dichiarare una variabile
+ e utilizzare console.error per stampare un messaggio di errore 
+se la variabile ha un valore specifico e console.warn per stampare un avviso se ha un altro valore specifico.
+
+
+let numero =20; //cambiare numero per controllare.
+
+if (numero < 0) {
+  console.error("Errore: Il numero non può essere negativo.");
+} else if (numero > 30) {
+  console.warn("Attenzione: Il numero è troppo grande.");
+} else {
+  console.log("Il numero è valido.");
+};*/
+
+/*Creare uno script che utilizzi console.table per stampare un array di oggetti in formato tabella e console.group per raggruppare messaggi della console.
+
+const persone = [
+  {
+    nome: "Francesco",
+    cognome: "Oranzini",
+    età: 30,
+    città: "Firenze"
+  },
+  {
+    nome: "Mattia",
+    cognome: "Pastafiglia",
+    età: 31,
+    città: "Catanzaro"
+  },
+  {
+    nome: "Alessandro",
+    cognome: "D'antoni",
+    età: 28,
+    città: "Palermo"
+  }
+];
+
+console.group('informazioni sulle persone');
+
+console.table(persone);
+
+console.log(persone.length);*/
+
+/*Creare uno script che utilizzi setTimeout per stampare un messaggio nella console dopo 3 secondi.
+ Dichiarare una funzione che contenga il messaggio e passare questa funzione a setTimeout.
+
+ function timeout(){
+  console.log("sono passati 3 secondi");
+ };
+
+ setTimeout(timeout, 3000);*/
+
+/*Creare uno script che utilizzi setInterval per stampare un messaggio nella console ogni 2 secondi.
+ Dichiarare una funzione che contenga il messaggio e passare questa funzione a setInterval
+
+
+function interval(){
+  console.log("sono passati 3 secondi");
+};
+
+ setInterval(interval, 3000);*/
+
+ /*Creare uno script che utilizzi setInterval per stampare un messaggio nella console ogni secondo e che interrompa il processo dopo 5 secondi utilizzando clearInterval.
+  Dichiarare una funzione che contenga il messaggio e utilizzare setTimeout per interrompere l'intervallo.
+
+function interval(){
+  console.log("è passato 1 secondo");
+};
+
+const count = setInterval(interval, 1000);
+
+setTimeout(() => {
+  clearInterval(count);
+  console.log("interval interrotto")
+}, 5000);*/
+  
+/*Creare uno script che utilizzi un blocco try per eseguire una divisione e un blocco catch per gestire un errore
+ se il divisore è zero. Stampare un messaggio di errore nella console se viene sollevata un'eccezione.*/
+
+ function divisione(dividendo, divisore) {
+  try {
+    const risultato = dividendo / divisore;
+    console.log(`Il risultato della divisione è: ${risultato}`);
+  } catch (error) {
+    console.error("Errore: Impossibile dividere per zero!");
+  }
+};
+
+divisione(45, 5);
+divisione(15, 0);
