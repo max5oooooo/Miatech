@@ -115,3 +115,94 @@ async function messaggio() {
   };
   
   inviaRichiestaPOST('https://jsonplaceholder.typicode.com/posts', datiDaInviare);*/
+
+  /*Creare una funzione asincrona che utilizzi fetch per eseguire una richiesta GET a un'API pubblica e gestire eventuali errori 
+  utilizzando try e catch. Stampare i dati restituiti o il messaggio di errore nella console.
+
+
+  async function fetchData(url) {
+    try {
+      const response = await fetch(url);
+  
+      if (!response.ok) {
+        throw new Error(`Errore nella richiesta: ${response.status}`);
+      }
+  
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      console.error('Si  è verificato un errore:', error);
+    }
+  }
+  
+  
+  fetchData('https://jsonplaceholder.typicode.com/posts')
+    .then(() => console.log('Richiesta completata'))
+    .catch(error => console.error('Errore nella chiamata a fetchData:', error));*/
+
+
+/*Creare uno script che tenti di fare una richiesta GET a un'API pubblica che non supporta CORS.
+ Osservare e comprendere l'errore CORS che appare nella console.
+
+ const url = 'https://example.com';
+
+
+fetch(url)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Errore Network');
+    }
+    return response.json();
+  })
+  .then(data => {
+    console.log(data);  
+
+  })
+  .catch(error => {
+    console.error('Problema fetch', error);  
+  });*/
+
+/*Creare uno script che utilizzi un servizio proxy per fare una richiesta GET a un'API pubblica che non supporta CORS, bypassando l'errore CORS.
+
+const apiUrl = 'https://api.example.com/data';
+
+
+const corsAnywhereUrl = 'https://cors-anywhere.herokuapp.com/';
+
+
+const proxyUrl = corsAnywhereUrl + apiUrl;
+
+fetch(proxyUrl)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('error');
+    }
+    return response.json();
+  })
+  .then(data => {
+    console.log(data);  
+
+  })
+  .catch(error => {
+    console.error('Problem', error);  
+  });*/
+
+
+/*Creare uno script che faccia una richiesta GET a un'API pubblica che supporta CORS. Stampare i dati restituiti nella console.
+const url = 'https://jsonplaceholder.typicode.com/posts';
+
+
+fetch(url)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Errore Network');
+    }
+    return response.json();
+  })
+  .then(data => {
+    console.log(data);  
+
+  })
+  .catch(error => {
+    console.error('Problema fetch', error);  
+  });*/
