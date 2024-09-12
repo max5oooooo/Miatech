@@ -6,20 +6,18 @@ function operationSuStringa(stringa) {
     try {
       let numero = Number(stringa);
       let risultato = numero * numero;
+      throw new ReferenceError();
       console.log(`Il quadrato di ${numero} è: ${risultato}`);
     } catch (error) {
-        switch (error) {
-            case "ReferenceError":
-                console.log("Variabile o funzione non definita");
-                break;
-            case "TypeError":
-                console.log("Non è stato utilizzato il tipo di dato previsto");
-                break;
-    }
+      if(error instanceof ReferenceError){
+        console.error("referenceError");
+      }else{
+        console.error("warning");
+      }
   }
 }
 
-  operationSuStringa("42");
+operationSuStringa("42");
 operationSuStringa("ciao"); 
 operationSuStringa("10a");*/
 
