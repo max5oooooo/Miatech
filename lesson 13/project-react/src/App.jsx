@@ -1,10 +1,10 @@
-import './App.css'
+import MyTitle from "./components/Mytitle";
 
 function App() {
   return (
-    <div>
-        <h1>Hello, world!</h1>
-      </div>
+  <>    
+    <MyTitle />
+  </>
   )
 }
 
