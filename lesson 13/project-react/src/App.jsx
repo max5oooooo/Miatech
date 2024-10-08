@@ -4,6 +4,7 @@ import Button from "./components/Button";
 import InputText from "./components/InputText";
 import LoginForm from "./components/LoginForm";
 import ItemList from "./components/ItemList";
+import Card from "./components/Card";
 
 function App() {
   const [counter, setCounter] = useState(0);
@@ -62,34 +63,43 @@ function App() {
      />
      </div>
      
-     <form onSubmit={handleSubmit}>
+     <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-full max-w-xs" onSubmit={handleSubmit}>
       <div>
         <label htmlFor="username">Username:</label>
-        <input type="text"id="username" value={username}  
+        <input className="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" id="username" value={username}  
          onChange={(e) => setUsername(e.target.value)}/>
       </div>
       <div>
         <label htmlFor="password">Password:</label>
-        <input type="password" id="password" value={password}
+        <input className="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="password" id="password" value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
       </div>
-      <button type="submit">Login</button>
+      <button className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mt-3 mb-2 hover:bg-sky-200 active:bg-sky-700" type="submit">Login</button>
     </form>
      
 
-    <form onSubmit={uncontrolledInput}>
+    <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-full max-w-xs" onSubmit={uncontrolledInput}>
       <div>
-        <input type="text" name="username" />
+        <label htmlFor="username">Username:</label>
+        <input className="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ml-2 mb-2" type="text" name="username" />
       </div>
       <div>
-      <input type="text" name="last_name" />
+      <label htmlFor="last_name">last_name:</label>
+      <input className="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ml-2 " type="text" name="last_name" />
       </div>
-      <button type="submit">Send</button>
+      <button className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mt-3 mb-2 hover:bg-sky-200 active:bg-sky-700" type="submit">Send</button>
     </form>
 
     <ItemList
     items={itemL}/>
+
+    <div>
+      <Card>
+        <h2>Titolo della carta</h2>
+        <p>Paragrafo della carta</p>
+      </Card>
+    </div>
   </>
   )
 }
