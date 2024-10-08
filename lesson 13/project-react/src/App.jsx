@@ -3,12 +3,14 @@ import MyTitle from "./components/Mytitle";
 import Button from "./components/Button";
 import InputText from "./components/InputText";
 import LoginForm from "./components/LoginForm";
+import ItemList from "./components/ItemList";
 
 function App() {
   const [counter, setCounter] = useState(0);
   const [inputValue, setInputValue] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const itemL = [`item1`, `item2`, `item3`, `item4`,]
   const handleIncrement = () => {
     setCounter((counter) => {
       return counter + 1;
@@ -32,6 +34,15 @@ function App() {
      event.preventDefault();
      alert(`Username: ${username} Password: ${password}`);
    };
+
+   const uncontrolledInput = (e) =>{
+    e.preventDefault();
+    const form = new FormData(e.target);
+    const data = Object.fromEntries(form);
+    console.log(data)
+   }
+
+
   useEffect(() => {
     console.log('counter  aggiornato', counter)
   }, [counter]);
@@ -50,6 +61,7 @@ function App() {
      Change={handleChange}
      />
      </div>
+     
      <form onSubmit={handleSubmit}>
       <div>
         <label htmlFor="username">Username:</label>
@@ -64,6 +76,20 @@ function App() {
       </div>
       <button type="submit">Login</button>
     </form>
+     
+
+    <form onSubmit={uncontrolledInput}>
+      <div>
+        <input type="text" name="username" />
+      </div>
+      <div>
+      <input type="text" name="last_name" />
+      </div>
+      <button type="submit">Send</button>
+    </form>
+
+    <ItemList
+    items={itemL}/>
   </>
   )
 }
