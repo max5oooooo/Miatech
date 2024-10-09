@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import MyTitle from "./components/Mytitle";
 import Button from "./components/Button";
 import InputText from "./components/InputText";
@@ -12,6 +12,7 @@ function App() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const itemL = [`item1`, `item2`, `item3`, `item4`,]
+  const nameRef = useRef();
   const handleIncrement = () => {
     setCounter((counter) => {
       return counter + 1;
@@ -37,6 +38,7 @@ function App() {
    };
 
    const uncontrolledInput = (e) =>{
+    alert(`il valore inserito nell'input è : ${nameRef.current.value}`)
     e.preventDefault();
     const form = new FormData(e.target);
     const data = Object.fromEntries(form);
@@ -62,27 +64,22 @@ function App() {
      Change={handleChange}
      />
      </div>
+
+     <LoginForm
+     submit={handleSubmit}
+     name={username}
+     password={password}
+     onPassword={setPassword}
+     onUsername={setUsername}
+     />
      
-     <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-full max-w-xs" onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="username">Username:</label>
-        <input className="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" id="username" value={username}  
-         onChange={(e) => setUsername(e.target.value)}/>
-      </div>
-      <div>
-        <label htmlFor="password">Password:</label>
-        <input className="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="password" id="password" value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-      </div>
-      <button className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mt-3 mb-2 hover:bg-sky-200 active:bg-sky-700" type="submit">Login</button>
-    </form>
+     
      
 
     <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-full max-w-xs" onSubmit={uncontrolledInput}>
       <div>
-        <label htmlFor="username">Username:</label>
-        <input className="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ml-2 mb-2" type="text" name="username" />
+        <label htmlFor="username" >Username:</label>
+        <input className="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ml-2 mb-2" type="text" name="username" ref={nameRef} />
       </div>
       <div>
       <label htmlFor="last_name">last_name:</label>
