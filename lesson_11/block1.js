@@ -60,16 +60,27 @@ console.log(lista)
 contenitoreLista.appendChild(lista);*/
 
 /*Crea un form con 2 input di testo: nome e cognome. Crea un bottone di submit del form. Gestisci l'evento submit in modo che prima che venga inviato un form mostri un alert 
-se i campi non sono compilati, se sono compilati potrà eseguire il submit del form.
-function validateForm() {
-    let nome = document.getElementById("nome").value;
-    let cognome = document.getElementById("cognome").value;  
-    if (nome === "" || cognome === "") {
-        alert("Per favore, compila tutti i campi.");
-        return false; 
-    } else {
-        return true; 
-    }
-}*/
+se i campi non sono compilati, se sono compilati potrà eseguire il submit del form.*/
+    
+const form = document.getElementById('myForm');
+
+    form.addEventListener('submit', function(event) {
+      // Prevenire l'invio del form (perché dobbiamo prima controllare i campi)
+      event.preventDefault();
+
+      // Ottieni i valori dei campi nome e cognome
+      const nome = document.getElementById('nome').value;
+      const cognome = document.getElementById('cognome').value;
+
+      // Verifica se i campi sono vuoti
+      if (nome === '' || cognome === '') {
+        alert('Per favore, compila entrambi i campi (nome e cognome).');
+      } else {
+        alert(`Form inviato con successo!\nNome: ${nome}\nCognome: ${cognome}`);
+        // Qui puoi eseguire il submit del form (ad esempio inviarlo al server)
+        // form.submit(); // Decommenta questa riga se vuoi effettivamente inviare il form
+      }
+    });
+
 
 
