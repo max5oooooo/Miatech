@@ -1,0 +1,74 @@
+@use "sass:math";
+$light-theme-bg: #ffffff;
+$light-theme-text: #333333;
+$dark-theme-bg: #000000;
+$dark-theme-text: #270ec5;
+$hover-color: #ffd700; // Colore giallo per l'hover
+
+@function pxToRem($pxValue) {
+  @return math.div($pxValue, 16px) * 1em;
+}
+
+// Mixin per il tema della navbar
+@mixin theme-navbar($theme: light) {
+  // Imposta i colori di base della navbar in base al tema
+  @if $theme == light {
+    background-color: $light-theme-bg;
+    color: $light-theme-text;
+
+    a {
+      color: $light-theme-text;
+      text-decoration: none;
+
+      &:hover {
+        color: $hover-color;
+      }
+    }
+  }
+  @else if $theme == dark {
+    background-color: $dark-theme-bg;
+    color: $light-theme-text;
+
+    a {
+      color: $dark-theme-text;
+      text-decoration: none;
+
+      &:hover {
+        color: $hover-color;
+      }
+    }
+  }
+}
+
+
+body{
+  font-size: 16px;
+}
+// Navbar principale
+.navbar {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  // Applica il mixin per il tema (qui si può cambiare light a dark per il tema scuro)
+  @include theme-navbar(light); // Usa il tema chiaro di default
+}
+
+// Voci di menu
+.navbar a {
+  margin: 0 15px;
+  font-size: 16px;
+  transition: color 0.3s ease; // Per transizione fluida dell'hover
+}
+
+
+
+h1 {
+  font-size: pxToRem(32px); // 32px diventa 2em
+}
+
+// Esempio di tema scuro
+.dark-theme {
+  @include theme-navbar(dark);
+}

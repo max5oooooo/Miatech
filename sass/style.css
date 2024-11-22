@@ -1,0 +1,43 @@
+body {
+  font-size: 16px;
+}
+
+.navbar {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  color: #333333;
+}
+.navbar a {
+  color: #333333;
+  text-decoration: none;
+}
+.navbar a:hover {
+  color: #ffd700;
+}
+
+.navbar a {
+  margin: 0 15px;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+.dark-theme {
+  background-color: #000000;
+  color: #333333;
+}
+.dark-theme a {
+  color: #270ec5;
+  text-decoration: none;
+}
+.dark-theme a:hover {
+  color: #ffd700;
+}
+
+/*# sourceMappingURL=style.css.map */
