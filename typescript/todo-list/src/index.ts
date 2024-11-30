@@ -1,15 +1,16 @@
-import { Todo, TodoWithMetadata } from "./types";
+import { Project, Todo, TodoStatus, TodoWithMetadata, User } from "./types";
 const todos: Todo[] = [
     { id: 1, title: "Prova 1", completed: false },
     { id: 2, title: "Prova 2", completed: true }
   ];
 
-  function addTodo(title: string, userId?: number, /*metadata?: any*/ metadata?:string | object): void{
+  function addTodo(title: string, userId?: number, /*metadata?: any*/  metadata?:string | object): void{
     let nextId = Date.now();
     const newTodo: Todo ={
         id: nextId,
         title:title,
         completed:false,
+        status:TodoStatus.Pending,
         userId,
         metadata,
     };
@@ -93,3 +94,84 @@ function parseInput(input: unknown): string {
   }
 
   console.log(todoMetaData);
+
+
+  function updateTodo(id: number, updates: Partial<Todo>): Todo | undefined {
+    // Trova il Todo da aggiornare
+    const todo = todos.find(todo => todo.id === id);
+    
+    if (!todo) {
+      console.log(`Todo con id ${id} non trovato.`);
+      return undefined;
+    }
+  
+    // Applica gli aggiornamenti
+    Object.assign(todo, updates);
+  
+    return todo;
+  };
+
+
+const updateTodo1 = updateTodo(1, { title: "Prova 1 aggiornata" });
+console.log(updateTodo1);
+
+// Aggiorna il completamento e aggiunge metadata a un altro Todo
+const updateTodo2 = updateTodo(2, { completed: false, metadata: { priority: "low" } });
+console.log(updateTodo2);
+
+
+
+// Funzione getTodoSummary che restituisce una tupla (title, completed)
+function getTodoSummary(todo: Todo): [string, boolean] {
+    return [todo.title, todo.completed];
+  }
+  
+  const exampleTodo: Todo = {
+    id: 1,
+    title: "Summary Todo",
+    completed: false
+  };
+  
+  const summary = getTodoSummary(exampleTodo);
+  
+  console.log(summary);  
+
+
+  function createProject(id: number, name: string, users: User[], todos: Todo[]): Project {
+    return {
+      id: id,
+      name: name,
+      users: users,
+      todos: todos
+    };
+  }
+
+
+const user1: User = { id: 1, name: "Alessandro", email: "Alessandro@hotmail.com" };
+const user2: User = { id: 2, name: "Francesco", email: "Francesco@hotmail.com" };
+
+const todo1: Todo = { id: 1, title: "Iniziare il progetto", completed: false, userId: 1 };
+const todo2: Todo = { id: 2, title: "Finire il progetto", completed: false, userId: 2 };
+
+const newProject = createProject(1, "Project 1", [user1, user2], [todo1, todo2]);
+
+console.log(newProject);
+
+
+function updateTodoStatus(todoId: number, status: TodoStatus): void {
+    // Troviamo il Todo con l'ID corrispondente
+    const todo = todos.find(t => t.id === todoId);
+    
+    if (todo) {
+      // Aggiorniamo lo stato del Todo
+      todo.status = status;
+      console.log(`Todo con id ${todoId} aggiornato allo status: ${status}`);
+    } else {
+      // Se il Todo non viene trovato, lanciamo un errore
+      console.error(`Todo con id ${todoId} non trovato.`);
+    }
+  }
+  
+
+  updateTodoStatus(1,TodoStatus.Completed);
+  updateTodoStatus(2,TodoStatus.InProgress);
