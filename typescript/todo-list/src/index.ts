@@ -1,4 +1,6 @@
-import { Project, Todo, TodoStatus, TodoWithMetadata, User } from "./types";
+import { PartialTodo, Project, Todo, TodoStatus, TodoWithMetadata, User } from "./types";
+import UserU from "./User";
+import { convertArrayToRecord } from "./utils";
 const todos: Todo[] = [
     { id: 1, title: "Prova 1", completed: false },
     { id: 2, title: "Prova 2", completed: true }
@@ -175,3 +177,51 @@ function updateTodoStatus(todoId: number, status: TodoStatus): void {
 
   updateTodoStatus(1,TodoStatus.Completed);
   updateTodoStatus(2,TodoStatus.InProgress);
+
+
+  const classUser1= new UserU(1,"Alessandro", "Alessandro@hotmail.com");
+  const classUser2= new UserU(2,"Francesco", "Francesco@hotmail.com");
+
+  const todoProva1:Todo={
+    id: 3,
+    title: "Completare esercizi",
+    completed: false,
+    status: TodoStatus.InProgress
+  };
+  const todoProva2:Todo={
+    id: 3,
+    title: "Iniziare esercizi",
+    completed: true,
+    status: TodoStatus.Completed
+  };
+
+  classUser1.addTodo(todoProva1);
+  classUser2.addTodo(todoProva2);
+
+  console.log("Todos of User 1:", classUser1.todos);
+  console.log("Todos of User 2:", classUser2.todos);
+
+  function updatePartialTodo(todoId: number, partialTodo: PartialTodo): Todo | undefined {
+    // Troviamo il Todo con l'id corrispondente
+    const todo = todos.find((t) => t.id === todoId);
+    
+    if (!todo) {
+      console.error("Todo non trovato");
+      return undefined;
+    }
+    
+    // Aggiorniamo il Todo con le proprietà specificate in partialTodo
+    Object.assign(todo, partialTodo);
+  
+    return todo;
+  }
+
+  const updatedTodo = updatePartialTodo(2, { completed: true, status: TodoStatus.Completed });
+  console.log(updatedTodo);
+  console.log(todos);
+
+
+  
+const todoRecord = convertArrayToRecord(todos);
+
+console.log(todoRecord);

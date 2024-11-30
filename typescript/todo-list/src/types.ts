@@ -34,3 +34,11 @@ export interface Todo {
     InProgress = "InProgress",
     Completed = "Completed"
   }
+
+  export type PartialTodo = {
+    [K in keyof Todo]?: Todo[K];
+  };
+
+  export type TodoRecord = {
+    [id: number]: Todo;
+  };
