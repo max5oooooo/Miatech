@@ -10,26 +10,23 @@ const TodoList = () => {
     { id: 3, title: 'Build a Todo App' },
   ];
   const [searchParams, setSearchParams] = useSearchParams();
-  const [searchTerm, setSearchTerm] = useState('');
+  
+  // Ottieni il termine di ricerca direttamente dai parametri della query
+  const searchTerm = searchParams.get('search') || '';
 
-  // Recupera il termine di ricerca dai parametri
-  useEffect(() => {
-    const term = searchParams.get('search') || '';
-    setSearchTerm(term);
-  }, [searchParams]);
-
-  // Filtra i todo in base al termine di ricerca
+  // Filtra i task in base al termine di ricerca
   const filteredTodos = todos.filter(todo =>
     todo.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  // Gestisce il cambiamento dell'input
-  const handleSearchChange = (event) => {
-    const value = event.target.value;
-    setSearchTerm(value);
-    
-    // Aggiorna i parametri di ricerca
-    setSearchParams({ search: value });
+  // Gestisce il cambio del termine di ricerca
+  const handleSearchChange = (e) => {
+    const newSearchTerm = e.target.value;
+    if (newSearchTerm) {
+      setSearchParams({ search: newSearchTerm });
+    } else {
+      setSearchParams({});
+    }
   };
 
   return (
