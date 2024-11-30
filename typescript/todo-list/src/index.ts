@@ -7,7 +7,7 @@ const todos: Todo[] = [];
 function addTodo(title:string,): void{
     let nextId = Date.now();
     const newTodo: Todo ={
-        id: nextId++,
+        id: nextId,
         title:title,
         completed:false
     };
