@@ -47,12 +47,15 @@ function App() {
 
 
   useEffect(() => {
+    document.title = `Titolo: ${counter}`;
     console.log('counter  aggiornato', counter)
   }, [counter]);
+
+  const titolo = counter > 0 ? 'Titolo' : 'Contatore';
   return (
   <>    
     <MyTitle />
-    <div>Counter : {counter}</div>
+    <div>{titolo} : {counter}</div>
     <Button
      onIncrement={handleIncrement}
      onDecrement={handleDecrement}
